@@ -20,3 +20,6 @@
 
 # Ignore WEbarch files.
 /WebArch
+
+#Ignore all .c9 specific files<br>
+/.c9/
