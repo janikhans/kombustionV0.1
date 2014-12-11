@@ -10,7 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require vendor_styles
+ *= require bootstrap.min
+ *= require metisMenu.min
+ *= require timeline
+ *= require sb-admin-2
+ *= require morris
  *= require font-awesome
  *= require_self
  */
