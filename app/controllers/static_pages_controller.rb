@@ -1,8 +1,8 @@
 class StaticPagesController < ApplicationController
-  
+
   def home
     if logged_in?
-      @micropost = current_user.microposts.build if logged_in?
+      @micropost = current_user.microposts.build 
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
   end
@@ -16,6 +16,17 @@ class StaticPagesController < ApplicationController
   def contact
   end
   
-  def dashboard
+  def feed
+    @micropost = current_user.microposts.build 
+    @feed_items = current_user.feed.paginate(page: params[:page])
+  end
+  
+  def parts
+  end
+  
+  def garage
+  end
+  
+  def stats
   end
 end

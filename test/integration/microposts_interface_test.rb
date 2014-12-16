@@ -8,7 +8,7 @@ class MicropostInterfaceTest < ActionDispatch::IntegrationTest
 
   test "micropost interface" do
     log_in_as(@user)
-    get root_path
+    get feed_path
     assert_select 'div.pagination'
     # Invalid submission
     post microposts_path, micropost: { content: "" }
@@ -33,15 +33,15 @@ class MicropostInterfaceTest < ActionDispatch::IntegrationTest
   
   test "micropost sidebar count" do
     log_in_as(@user)
-    get root_path
+    get feed_path
     assert_match "34 microposts", response.body
     # User with zero microposts
     other_user = users(:mallory)
     log_in_as(other_user)
-    get root_path
+    get feed_path
     assert_match "0 microposts", response.body
     other_user.microposts.create!(content: "A micropost")
-    get root_path
+    get feed_path
     assert_match "1 micropost", response.body
   end
 end
