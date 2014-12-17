@@ -15,7 +15,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
-//= require metisMenu.min
 //= require raphael.min
 //= require morris.min
 //= require morris-data
