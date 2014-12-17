@@ -1,0 +1,63 @@
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="sidebar-search">
+                <div class="input-group custom-search-form">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+                </div>
+                <!-- /input-group -->
+            </li>
+            <li>
+                <%= link_to root_path do %>
+                  <i class="fa fa-dashboard fa-fw"></i> Dashboard
+                <% end %>
+            </li>
+            <li>
+                <%= link_to garage_path do %>
+                  <i class="fa fa-car fa-fw"></i> My Garage
+                <% end %>
+            </li>
+            <li>
+                <%= link_to feed_path do %>
+                  <i class="fa fa-comments fa-fw"></i> Social Feed
+                <% end %>
+            </li>
+            <li>
+                <%= link_to parts_path do %>
+                  <i class="fa fa-database fa-fw"></i> Part Search
+                <% end %>
+            </li>
+            <li>
+                <%= link_to stats_path do %>
+                  <i class="fa fa-area-chart fa-fw"></i> Statistics
+                <% end %>
+            </li>
+            <li>
+                <%= link_to stats_path do %>
+                  <i class="fa fa-area-chart fa-fw"></i> Tips and Tricks
+                <% end %>
+            </li>
+            <li>
+                <%= link_to stats_path do %>
+                  <i class="fa fa-area-chart fa-fw"></i> Kombustion Deals
+                <% end %>
+            </li>
+            <li>
+                <%= link_to stats_path do %>
+                  <i class="fa fa-area-chart fa-fw"></i> Show and Tell
+                <% end %>
+            </li>
+            <li>
+                <%= link_to stats_path do %>
+                  <i class="fa fa-area-chart fa-fw"></i> Something else
+                <% end %>
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>

@@ -1,0 +1,11 @@
+<%= form_for @vehicle do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :category, placeholder: "What kind of vehicle?" %>
+    <%= f.text_area :year, placeholder: "What model year is it?" %>
+    <%= f.text_area :make, placeholder: "What make is it?" %>
+    <%= f.text_area :model, placeholder: "What model is it?" %>
+    <%= f.text_area :name, placeholder: "Do you have a specific name for it?" %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>   
