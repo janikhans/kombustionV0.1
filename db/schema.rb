@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023062741) do
+ActiveRecord::Schema.define(version: 20141223061730) do
 
   create_table "microposts", force: true do |t|
     t.text     "content"
@@ -51,5 +51,17 @@ ActiveRecord::Schema.define(version: 20141023062741) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "vehicles", force: true do |t|
+    t.string   "make"
+    t.string   "model"
+    t.integer  "year"
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "vehicles", ["user_id"], name: "index_vehicles_on_user_id"
 
 end
