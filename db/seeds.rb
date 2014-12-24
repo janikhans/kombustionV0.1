@@ -33,6 +33,15 @@ users = User.order(:created_at).take(6)
   
 end
 
+5.times do
+    name = Faker::Name.name
+    make = Faker::Name.first_name
+    model = Faker::Name.last_name
+    year = Faker::Number.number(4)
+  users.each { |user| user.vehicles.create!(name: name, make: make, model: model, year: year) }
+  
+end
+
 # Following relationships
 users = User.all
 user  = users.first

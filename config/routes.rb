@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'garage' => 'static_pages#garage'
   get 'parts' => 'static_pages#parts'
   get 'stats' => 'static_pages#stats'
+  get 'add_vehicle' => 'vehicles#new'
   get 'signup'  =>  'users#new'
   get 'login'   =>  'sessions#new'
   post 'login'   =>  'sessions#create'
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :vehicles
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

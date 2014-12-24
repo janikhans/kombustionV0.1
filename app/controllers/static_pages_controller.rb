@@ -25,6 +25,8 @@ class StaticPagesController < ApplicationController
   end
   
   def garage
+    @user = current_user.id
+    @vehicles = current_user.vehicles
   end
   
   def stats
