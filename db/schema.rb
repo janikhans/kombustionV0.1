@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223061730) do
+ActiveRecord::Schema.define(version: 20141224181605) do
 
   create_table "microposts", force: true do |t|
     t.text     "content"
@@ -58,8 +58,11 @@ ActiveRecord::Schema.define(version: 20141223061730) do
     t.integer  "year"
     t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "picture"
+    t.string   "unit_of_measurement"
+    t.string   "category"
   end
 
   add_index "vehicles", ["user_id"], name: "index_vehicles_on_user_id"

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'parts' => 'static_pages#parts'
   get 'stats' => 'static_pages#stats'
   get 'add_vehicle' => 'vehicles#new'
+  get 'vehicle_information' => 'vehicles#show'
   get 'signup'  =>  'users#new'
   get 'login'   =>  'sessions#new'
   post 'login'   =>  'sessions#create'

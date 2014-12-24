@@ -18,8 +18,8 @@
 # Ignore Spring files.
 /spring/*.pid
 
-# Ignore WEbarch files.
-/WebArch
+# Ignore uploaded test images.
+/public/uploads
 
 #Ignore all .c9 specific files<br>
 /.c9/

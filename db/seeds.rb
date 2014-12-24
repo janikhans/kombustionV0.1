@@ -38,7 +38,9 @@ end
     make = Faker::Name.first_name
     model = Faker::Name.last_name
     year = Faker::Number.number(4)
-  users.each { |user| user.vehicles.create!(name: name, make: make, model: model, year: year) }
+    unit_of_measurement = Faker::Lorem.word
+    category = Faker::Name.first_name
+  users.each { |user| user.vehicles.create!(name: name, make: make, model: model, year: year, category: category, unit_of_measurement: unit_of_measurement) }
   
 end
 
