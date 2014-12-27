@@ -1,0 +1,19 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+<%= f.label :make %>
+<%= f.text_field :make, class: 'form-control', disabled: true %>
+
+<%= f.label :model %>
+<%= f.text_field :model, class: 'form-control', disabled: true %>
+
+<%= f.label :year %>
+<%= f.text_field :year, class: 'form-control', disabled: true %>
+
+<%= f.label :name, "A Custom Name" %>
+<%= f.text_field :name, class: 'form-control' %>
+
+<%= f.label :unit_of_measurement %>
+<%= f.text_field :unit_of_measurement, class: 'form-control' %>
+
+<%= f.label :category %>
+<%= f.text_field :category, class: 'form-control' %>
