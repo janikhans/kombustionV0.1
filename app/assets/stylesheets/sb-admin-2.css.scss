@@ -600,8 +600,8 @@ span.picture {
 
 /* Vehicle Featured box */
 .vehicle-image {
-    max-width: 80%;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
     border-radius: 50%;
     display: block;
     margin: auto;
@@ -630,7 +630,6 @@ span.picture {
 }
 .vehicle-body {
     padding: 20px;
-    height: 175px;
 }
 .vehicle-heading {
     border-top-left-radius: 5px;
