@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'about'   =>  'static_pages#about'
   get 'contact' =>  'static_pages#contact'
   get 'feed'    => 'static_pages#feed'
-  get 'garage' => 'static_pages#garage'
+  get 'garage' => 'rides#garage'
   get 'parts' => 'static_pages#parts'
   get 'stats' => 'static_pages#stats'
   get 'add_vehicle' => 'vehicles#new'

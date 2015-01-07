@@ -8,7 +8,7 @@ one:
   unit_of_measurement: MyString
   category: MyString
   picture: MyString
-  private: false
+  is_private: false
   user_id: 
 
 two:
@@ -19,5 +19,5 @@ two:
   unit_of_measurement: MyString
   category: MyString
   picture: MyString
-  private: false
+  is_private: false
   user_id: 

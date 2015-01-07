@@ -40,7 +40,9 @@ end
     year = Faker::Number.number(4)
     unit_of_measurement = Faker::Lorem.word
     category = Faker::Name.first_name
-  users.each { |user| user.vehicles.create!(name: name, make: make, model: model, year: year, category: category, unit_of_measurement: unit_of_measurement) }
+    is_private = false
+    picture = Faker::Avatar.image
+  users.each { |user| user.vehicles.create!(name: name, make: make, model: model, year: year, category: category, unit_of_measurement: unit_of_measurement, iS_private: is_private, picture: picture) }
   
 end
 
