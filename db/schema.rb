@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224181605) do
+ActiveRecord::Schema.define(version: 20150107191233) do
 
   create_table "microposts", force: true do |t|
     t.text     "content"
@@ -35,6 +35,22 @@ ActiveRecord::Schema.define(version: 20141224181605) do
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
+  create_table "rides", force: true do |t|
+    t.string   "make"
+    t.string   "model"
+    t.integer  "year"
+    t.string   "name"
+    t.string   "unit_of_measurement"
+    t.string   "category"
+    t.string   "picture"
+    t.boolean  "private"
+    t.integer  "user_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "rides", ["user_id"], name: "index_rides_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -51,20 +67,5 @@ ActiveRecord::Schema.define(version: 20141224181605) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-
-  create_table "vehicles", force: true do |t|
-    t.string   "make"
-    t.string   "model"
-    t.integer  "year"
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "picture"
-    t.string   "unit_of_measurement"
-    t.string   "category"
-  end
-
-  add_index "vehicles", ["user_id"], name: "index_vehicles_on_user_id"
 
 end

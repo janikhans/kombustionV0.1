@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  make: MyString
+  model: MyString
+  year: 1
+  name: MyString
+  unit_of_measurement: MyString
+  category: MyString
+  picture: MyString
+  private: false
+  user_id: 
+
+two:
+  make: MyString
+  model: MyString
+  year: 1
+  name: MyString
+  unit_of_measurement: MyString
+  category: MyString
+  picture: MyString
+  private: false
+  user_id: 
