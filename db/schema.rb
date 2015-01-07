@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107191233) do
+ActiveRecord::Schema.define(version: 20150107202633) do
 
   create_table "microposts", force: true do |t|
     t.text     "content"
@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 20150107191233) do
     t.string   "unit_of_measurement"
     t.string   "category"
     t.string   "picture"
-    t.boolean  "private"
+    t.boolean  "is_private",          default: false
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "rides", ["user_id"], name: "index_rides_on_user_id"

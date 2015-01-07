@@ -42,7 +42,7 @@ end
     category = Faker::Name.first_name
     is_private = false
     picture = Faker::Avatar.image
-  users.each { |user| user.vehicles.create!(name: name, make: make, model: model, year: year, category: category, unit_of_measurement: unit_of_measurement, iS_private: is_private, picture: picture) }
+  users.each { |user| user.rides.create!(name: name, make: make, model: model, year: year, category: category, unit_of_measurement: unit_of_measurement, is_private: is_private, picture: picture) }
   
 end
 

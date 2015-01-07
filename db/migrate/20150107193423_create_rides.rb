@@ -8,7 +8,7 @@ class CreateRides < ActiveRecord::Migration
       t.string :unit_of_measurement
       t.string :category
       t.string :picture
-      t.boolean :is_private
+      t.boolean :is_private, default: false
       t.references :user, index: true
 
       t.timestamps null: false
