@@ -3,11 +3,11 @@
 one:
   make: MyString
   model: MyString
-  year: MyString
+  year: 1
   category: MyString
 
 two:
   make: MyString
   model: MyString
-  year: MyString
+  year: 1
   category: MyString
