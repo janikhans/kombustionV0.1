@@ -21,5 +21,8 @@
 # Ignore uploaded test images.
 /public/uploads
 
-#Ignore all .c9 specific files<br>
-/.c9/
+#Ignore all .c9 specific files
+/.c9
+
+#Ignore all seed images
+/Seed_pictures

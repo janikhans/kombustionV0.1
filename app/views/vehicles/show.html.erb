@@ -1,0 +1,91 @@
+<% provide(:title, @vehicle.make) %>
+<div class="col-lg-12">
+    <h1 class="page-header"><%= @vehicle.year %> <%= @vehicle.make %> <%= @vehicle.model %></h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= @vehicle.year %> <%= @vehicle.make %> <%= @vehicle.model %></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle"> </div>
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Category:</td>
+                        <td><%= @vehicle.category %></td>
+                      </tr>
+                      <tr>
+                        <td>Weight</td>
+                        <td>250lbs</td>
+                      </tr>
+                      <tr>
+                        <td>Horsepower</td>
+                        <td>55</td>
+                      </tr>
+                      <tr>
+                        <td>Rating</td>
+                        <td>3.5/5</td>
+                      </tr>
+                        <tr>
+                        <td>Description</td>
+                        <td>Totally awesome dirtbike. Everyone should buy one.</td>
+                      </tr>
+                      <tr>
+                        <td>Something</td>
+                        <td>Tadah</td>
+                      </tr>
+                        <td>More Stuff</td>
+                        <td>Figure this out later</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <a href="#" class="btn btn-primary">Read Reviews</a>
+                  <a href="#" class="btn btn-primary">See More Information</a>
+                </div>
+              </div>
+            </div>
+                 <div class="panel-footer">
+                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                        <span class="pull-right">
+                            <%= link_to "Edit this Vehicle", edit_vehicle_path, :class => "btn btn-sm btn-warning" %>
+                            <%= link_to "Delete this Vehicle", @vehicle, :class => "btn btn-sm btn-danger", method: :delete,
+                                  data: { confirm: "You sure?" } %>
+                        </span>
+                 </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <div class="well">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#home" data-toggle="tab">Intervals</a></li>
+              <li><a href="#issues" data-toggle="tab">Add New Interval</a></li>
+              <li><a href="#modifications" data-toggle="tab">Modifications</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+             
+              </div>
+              <div class="tab-pane fade" id="issues">
+                <section class="micropost_form">
+                 
+              </div>
+              <div class="tab-pane fade" id="modifications">
+            	<form id="tab3">
+                	<label>New Password</label>
+                	<input type="password" class="input-xlarge">
+                	<div>
+                	    <button class="btn btn-primary">Update</button>
+                	</div>
+            	</form>
+              </div>
+          </div>
+          </div>
+        </div>        
+    </div>
+</div>

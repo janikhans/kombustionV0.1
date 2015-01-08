@@ -38,8 +38,19 @@ uom_array = ['Hours', 'Miles', 'Kilometers']
 model_array = ['KX450', 'CRF450', 'YZ250', 'YZ250FX', 'F800GSA', '250SXF','350XC', 'RM125', 'TE300','EC250', '250RR', 'TXT280']
 year_array = (2000..2015).to_a
 category_array = ['Dirt Bike', 'Street', 'UTV', 'ATV', 'Cruiser', 'Dual Sport','Adventure', 'Snowmobile']
+users_array = [1,2,3,4,5,6,7]
 
-5.times do
+
+
+15.times do |n|
+    make = make_array.sample
+    model = model_array.sample
+    year = year_array.sample
+    category = category_array.sample
+    Vehicle.create!(make: make, model: model, year: year, category: category)
+end
+
+50.times do |n|
     name = Faker::Name.first_name
     make = make_array.sample
     model = model_array.sample
@@ -47,10 +58,13 @@ category_array = ['Dirt Bike', 'Street', 'UTV', 'ATV', 'Cruiser', 'Dual Sport','
     unit_of_measurement = uom_array.sample
     category = category_array.sample
     is_private = false
-    picture = Faker::Avatar.image
-  users.each { |user| user.rides.create!(name: name, make: make, model: model, year: year, category: category, unit_of_measurement: unit_of_measurement, is_private: is_private, picture: picture) }
-  
+    picture = File.open(Dir.glob(File.join(Rails.root, 'Seed_pictures', '*')).sample)
+    user_id = users_array.sample
+    Ride.create!(make: make, model: model, year: year, category: category, is_private: is_private, user_id: user_id, name: name, unit_of_measurement: unit_of_measurement, picture: picture)
 end
+
+
+
 
 # Following relationships
 users = User.all

@@ -1,0 +1,13 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+<%= f.label :make %> 
+<%= f.select(:make, options_for_select(['Beta', 'BMW','GasGas', 'Honda', 'Husqvarna', 'Kawasaki', 'KTM', 'Sherco', 'Suzuki', 'TM', 'Yamaha']), {}, {class: "form-control"}) %>
+
+<%= f.label :model %>
+<%= f.text_field :model, class: 'form-control' %>
+
+<%= f.label :year %>
+<%= f.text_field :year, class: 'form-control' %>
+
+<%= f.label :category %>
+<%= f.select(:category, options_for_select(['Dirt Bike', 'Street', 'Cruiser', 'UTV', 'ATV', 'Snowmobile']), {}, {class: "form-control"}) %>
