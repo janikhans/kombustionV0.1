@@ -33,12 +33,17 @@ users = User.order(:created_at).take(6)
   
 end
 
+make_array = ['Beta', 'BMW', 'GasGas', 'Yamaha', 'Kawasaki', 'Honda','KTM', 'Suzuki', 'Husqvarna','Sherco', 'TM', 'Ossa']
+uom_array = ['Hours', 'Miles', 'Kilometers']
+model_array = ['KX450', 'CRF450', 'YZ250', 'YZ250FX', 'F800GSA', '250SXF','350XC', 'RM125', 'TE300','EC250', '250RR', 'TXT280']
+year_array = (2000..2015).to_a
+
 5.times do
-    name = Faker::Name.name
-    make = Faker::Name.first_name
-    model = Faker::Name.last_name
-    year = Faker::Number.number(4)
-    unit_of_measurement = Faker::Lorem.word
+    name = Faker::Name.first_name
+    make = make_array.sample
+    model = model_array.sample
+    year = year_array.sample
+    unit_of_measurement = uom_array.sample
     category = Faker::Name.first_name
     is_private = false
     picture = Faker::Avatar.image

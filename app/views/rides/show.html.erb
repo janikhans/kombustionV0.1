@@ -10,6 +10,7 @@
             <div class="col-sm-12">
                 <div class="col-xs-12 col-sm-4">
                     <h2><%= @ride.name %></h2>
+                    <p><strong>Owner: </strong> <%= link_to @ride.user.name, @ride.user %></p>
                     <p><strong>Make: </strong> <%= @ride.make %></p>
                     <p><strong>Model: </strong> <%= @ride.model %> </p>
                     <p><strong>Year: </strong> <%= @ride.year %> </p>

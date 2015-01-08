@@ -22,7 +22,7 @@
                      <h3><i class="fa fa-thumbs-up fa-2x"></i></h3>
                   </li>
                   <li class="issues" style="margin-left: 1px;">
-                     <5 HOURS  
+                     UPCOMING 
                      <h3><strong>10</strong></h3>
                   </li>
                </ul>
@@ -31,11 +31,7 @@
                <a class="btn btn-default" role="button"><i class="fa fa-cloud-upload fa-2x"></i><br><small>Update</small></a>
                <a class="btn btn-default" role="button"><i class="fa fa-share-alt fa-2x"></i><br><small>See Intervals</small></a>
                <!--<a class="btn btn-default" role="button"><i class="fa fa-history fa-2x"></i><br><small>Information</small></a>-->
-               <div class="btn btn-default" role="button">
-                  <%= link_to ride do %>
-                     <i class="fa fa-history fa-2x"></i><br><small>Information</small> 
-                  <% end %>
-               </div>
+               <%= link_to ride, :class => "btn btn-default" do %><i class="fa fa-history fa-2x"></i><br><small>Information</small><% end %>
             </div>
          </div>
       </div>

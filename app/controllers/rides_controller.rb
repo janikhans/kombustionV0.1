@@ -1,12 +1,15 @@
 class RidesController < ApplicationController
-    before_action :logged_in_user
+    
+    before_action :logged_in_user, only: [:garage, :new, :create, :edit, :update, :destroy]
     before_action :set_user
+    before_action :correct_user, only: [:edit, :update]
     
     def garage
         @rides = @user.rides
     end
 
     def index
+        @explores = Ride.where(is_private: false)
     end
     
     def show
@@ -50,6 +53,11 @@ class RidesController < ApplicationController
     
     private
     
+        def correct_user
+          @user = Ride.find(params[:id]).user
+          redirect_to(root_url) unless current_user?(@user)
+        end
+        
         def set_user
             @user = current_user
         end

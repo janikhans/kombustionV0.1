@@ -17,3 +17,6 @@
 
 <%= f.label :category %>
 <%= f.select(:category, options_for_select(['Dirt Bike', 'Street', 'Cruiser', 'UTV', 'ATV', 'Snowmobile']), {}, {class: "form-control"}) %>
+
+<%= f.label "Make it private?" %> 
+<%= f.check_box :is_private %>
