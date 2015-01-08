@@ -37,6 +37,7 @@ make_array = ['Beta', 'BMW', 'GasGas', 'Yamaha', 'Kawasaki', 'Honda','KTM', 'Suz
 uom_array = ['Hours', 'Miles', 'Kilometers']
 model_array = ['KX450', 'CRF450', 'YZ250', 'YZ250FX', 'F800GSA', '250SXF','350XC', 'RM125', 'TE300','EC250', '250RR', 'TXT280']
 year_array = (2000..2015).to_a
+category_array = ['Dirt Bike', 'Street', 'UTV', 'ATV', 'Cruiser', 'Dual Sport','Adventure', 'Snowmobile']
 
 5.times do
     name = Faker::Name.first_name
@@ -44,7 +45,7 @@ year_array = (2000..2015).to_a
     model = model_array.sample
     year = year_array.sample
     unit_of_measurement = uom_array.sample
-    category = Faker::Name.first_name
+    category = category_array.sample
     is_private = false
     picture = Faker::Avatar.image
   users.each { |user| user.rides.create!(name: name, make: make, model: model, year: year, category: category, unit_of_measurement: unit_of_measurement, is_private: is_private, picture: picture) }
