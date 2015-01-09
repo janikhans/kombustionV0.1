@@ -9,11 +9,17 @@ class RidesController < ApplicationController
     end
 
     def index
-        @explores = Ride.where(is_private: false).paginate(page: params[:page], :per_page => 6)
+        @explores = Ride.where(is_private: false).paginate(page: params[:page], :per_page => 18)
+        unless logged_in?
+            render layout: "welcome"
+        end
     end
     
     def show
         @ride = Ride.find(params[:id])
+        unless logged_in?
+            render layout: "welcome"
+        end
     end
     
     def new

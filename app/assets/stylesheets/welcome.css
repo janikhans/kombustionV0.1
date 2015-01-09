@@ -13,5 +13,6 @@
  *= require animate
  *= require font-awesome
  *= require style
+ *= require test
  *= require_self
  */
