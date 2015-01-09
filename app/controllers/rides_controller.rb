@@ -9,7 +9,7 @@ class RidesController < ApplicationController
     end
 
     def index
-        @explores = Ride.where(is_private: false)
+        @explores = Ride.where(is_private: false).paginate(page: params[:page], :per_page => 6)
     end
     
     def show

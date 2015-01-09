@@ -3,6 +3,9 @@
     <h1 class="page-header">Explore Rides</h1>
 </div>
 
-<ul class="row">
+<% if @explores.any? %>
+  <ul class="row">
     <%= render partial: "explore", collection: @explores %>
-</ul>
+  </ul>
+  <%= will_paginate @explores %>
+<% end %>
