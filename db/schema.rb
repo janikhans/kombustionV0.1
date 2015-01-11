@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108203223) do
+ActiveRecord::Schema.define(version: 20150111235743) do
+
+  create_table "intervals", force: true do |t|
+    t.string   "description"
+    t.integer  "length"
+    t.string   "group"
+    t.string   "action"
+    t.boolean  "recommended"
+    t.integer  "intervaled_id"
+    t.string   "intervaled_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "intervals", ["intervaled_type", "intervaled_id"], name: "index_intervals_on_intervaled_type_and_intervaled_id"
 
   create_table "microposts", force: true do |t|
     t.text     "content"
