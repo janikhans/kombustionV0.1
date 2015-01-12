@@ -63,28 +63,44 @@
         </div>
         <div class="col-md-6 col-lg-6">
             <div class="well">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#home" data-toggle="tab">Intervals</a></li>
-              <li><a href="#issues" data-toggle="tab">Add New Interval</a></li>
-              <li><a href="#modifications" data-toggle="tab">Modifications</a></li>
-            </ul>
-            <div id="myTabContent" class="tab-content">
-             
-              </div>
-              <div class="tab-pane fade" id="issues">
-                <section class="micropost_form">
-                 
-              </div>
-              <div class="tab-pane fade" id="modifications">
-            	<form id="tab3">
-                	<label>New Password</label>
-                	<input type="password" class="input-xlarge">
-                	<div>
-                	    <button class="btn btn-primary">Update</button>
-                	</div>
-            	</form>
-              </div>
-          </div>
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab">Intervals</a></li>
+      <li><a href="#issues" data-toggle="tab">Issues</a></li>
+      <li><a href="#modifications" data-toggle="tab">Modifications</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane active in" id="home">
+          <% if @vehicle.intervals.count > 0 %>
+    <% @vehicle.intervals.each do |interval| %>
+      <tr>
+        <td><%= interval.description %></td>
+        <td><%= interval.length %> </td>
+        <td><%= interval.action %> </td>
+        <td><%= interval.recommended %> </td>
+        <td><%= interval.group %> </td>
+        <td><%= link_to "Edit", edit_vehicle_interval_path(@vehicle, interval), class:"btn btn-default" %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="2">No intervals found for this vehicle.  Click the 'New Interval' button to create a new interaction.</td>
+    </tr>
+  <% end %>
+      </div>
+      <div class="tab-pane fade" id="issues">
+          <%= link_to "New Interval", new_vehicle_interval_path(@vehicle), class: "btn btn-primary" %>
+      </div>
+      <div class="tab-pane fade" id="modifications">
+    	<form id="tab3">
+        	<label>New Password</label>
+        	<input type="password" class="input-xlarge">
+        	<div>
+        	    <button class="btn btn-primary">Update</button>
+        	</div>
+    	</form>
+      </div>
+  </div>
+  </div>
           </div>
         </div>        
     </div>

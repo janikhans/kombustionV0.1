@@ -1,4 +1,5 @@
 class Vehicle < ActiveRecord::Base
+    has_many :intervals, as: :intervaled
     before_save :downcase_fields_and_upcase
     validates :make, :model, :category, presence: true
     validates :model, :make, :year, :category, :uniqueness => {:scope => [:make, :year, :category], message: "already exists"}

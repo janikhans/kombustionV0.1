@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'intervals/new'
+
+  get 'intervals/create'
+
+  get 'intervals/edit'
+
+  get 'intervals/update'
+
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'account_activations/edit'
@@ -29,8 +37,12 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
-  resources :rides
-  resources :vehicles
+  resources :rides do
+    resources :intervals, only: [:new, :create, :edit, :update]
+  end
+  resources :vehicles do
+    resources :intervals, only: [:new, :create, :edit, :update]
+  end
   
 
   # The priority is based upon order of creation: first created -> highest priority.

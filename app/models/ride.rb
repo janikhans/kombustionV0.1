@@ -1,5 +1,6 @@
 class Ride < ActiveRecord::Base
   belongs_to :user
+  has_many :intervals, as: :intervaled
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :name, :make, :model, :category, :unit_of_measurement, presence: true
