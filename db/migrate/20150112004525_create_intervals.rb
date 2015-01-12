@@ -6,6 +6,7 @@ class CreateIntervals < ActiveRecord::Migration
       t.string :group
       t.string :action
       t.boolean :recommended
+      t.string :unit_of_measurement
       t.references :intervaled, polymorphic: true, index: true
 
       t.timestamps null: false

@@ -1,0 +1,22 @@
+<%= form_for [@context, @interval] do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.select(:group, options_for_select(['Chassis', 'Electrical', 'Suspension', 'Engine', 'Drive', 'Controls', 'Intake', 'General', 'Custom']), {}, {class: "form-control"}) %>
+    <%= f.text_field(:description, placeholder: "What do you want to check?", class: "form-control") %>
+    <div class="row">
+      <div class="col-md-8 col-lg-8">
+        <%= f.number_field(:length, class: "form-control") %>
+      </div>
+      <div class="col-md-4 col-lg-4">
+        <%= f.select(:unit_of_measurement, options_for_select(['Hours', 'Kilometers', 'Miles']), {}, {class: "form-control"}) %>
+      </div>
+    </div>
+    <%= f.select(:action, options_for_select(['Inspect', 'Replace', 'Top Off', 'Adjust', 'Tighten', 'Clean', 'Repack Grease', 'Lubricate']), {}, {class: "form-control"}) %>
+    <div class="checkbox">
+        <%= f.label :recommended, class: "checkbox inline" do %>
+          <%= f.check_box :recommended %>
+          <span>Manufacturer Recommended Interval?</span>
+        <% end %>
+  </div>
+  <%= f.submit "Add New Interval", class: "btn btn-primary" %>
+<% end %>

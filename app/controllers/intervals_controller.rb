@@ -10,8 +10,10 @@ class IntervalsController < ApplicationController
     @interval = @context.intervals.new(interval_params)
     
     if @interval.save
-      flash[:success] = "Manufacturer Recommended Interval Created!"
+      flash[:success] = "Interval Created!"
       redirect_to context_url(context)
+    else
+      render 'new'
     end
   end
 
@@ -25,8 +27,10 @@ class IntervalsController < ApplicationController
     @interval = @context.intervals.find(params[:id])
     
     if @interval.update_attributes(interval_params)
-      flash[:sucess] = "Manufacturer Recommended Interval Changed!"
-      redirect_to context_url
+      flash[:success] = "Interval Changed!"
+      redirect_to context_url(context)
+    else
+      render 'edit'
     end
   end
   
@@ -47,7 +51,7 @@ class IntervalsController < ApplicationController
     end
     
     def context_url(context)
-      if Vehicle == context
+      if Vehicle === context
         vehicle_path(context)
       else
         ride_path(context)

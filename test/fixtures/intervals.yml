@@ -6,6 +6,7 @@ one:
   group: MyString
   action: MyString
   recommended: false
+  unit_of_measurement: MyString
   intervaled_id: 
   intervaled_type: Intervaled
 
@@ -15,5 +16,6 @@ two:
   group: MyString
   action: MyString
   recommended: false
+  unit_of_measurement: MyString
   intervaled_id: 
   intervaled_type: Intervaled

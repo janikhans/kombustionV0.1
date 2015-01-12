@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111235743) do
+ActiveRecord::Schema.define(version: 20150112004525) do
 
   create_table "intervals", force: true do |t|
     t.string   "description"
@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(version: 20150111235743) do
     t.string   "group"
     t.string   "action"
     t.boolean  "recommended"
+    t.string   "unit_of_measurement"
     t.integer  "intervaled_id"
     t.string   "intervaled_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   add_index "intervals", ["intervaled_type", "intervaled_id"], name: "index_intervals_on_intervaled_type_and_intervaled_id"
