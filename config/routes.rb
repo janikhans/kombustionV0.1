@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-  get 'intervals/new'
-
-  get 'intervals/create'
-
-  get 'intervals/edit'
-
+  
   get 'intervals/update'
-
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'account_activations/edit'
