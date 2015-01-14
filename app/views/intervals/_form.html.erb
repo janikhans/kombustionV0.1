@@ -5,7 +5,7 @@
     <%= f.text_field(:description, placeholder: "What do you want to check?", class: "form-control") %>
     <div class="row">
       <div class="col-md-8 col-lg-8">
-        <%= f.number_field(:length, class: "form-control") %>
+        <%= f.number_field(:length, class: "form-control", step: "any") %>
       </div>
       <div class="col-md-4 col-lg-4">
         <%= f.select(:unit_of_measurement, options_for_select(['Hours', 'Kilometers', 'Miles']), {}, {class: "form-control"}) %>
