@@ -17,6 +17,7 @@ class RidesController < ApplicationController
     
     def show
         @ride = Ride.find(params[:id])
+        @intervals = @ride.intervals
         unless logged_in?
             render layout: "welcome"
         end

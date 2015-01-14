@@ -15,9 +15,9 @@ Rails.application.routes.draw do
 
   root              'welcome#splash'
   get 'home'    =>  'static_pages#home'
-  get 'help'    =>  'static_pages#help'
-  get 'about'   =>  'static_pages#about'
-  get 'contact' =>  'static_pages#contact'
+  get 'help'    =>  'welcome#help'
+  get 'about'   =>  'welcome#about'
+  get 'contact' =>  'welcome#contact'
   get 'feed'    => 'static_pages#feed'
   get 'garage' => 'rides#garage'
   get 'parts' => 'static_pages#parts'

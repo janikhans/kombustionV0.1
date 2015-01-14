@@ -1,0 +1,20 @@
+<div class="panel-group" id="intervals">
+    <% @intervals.group_by{|l| l.group }.each do |group,intervals| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title"><a data-toggle="collapse" data-parent="#intervals" href="#<%= group %>"><%= group %></a></h4>
+        </div>
+        <div id="<%= group %>" class="panel-collapse collapse">
+         <% intervals.each do |interval| %>
+          <div id="<%= interval.id %>" class="panel-body">
+            <%= interval.action %> <%= interval.description %> every <%= interval.length %> <%= interval.unit_of_measurement %>
+            <span class="pull-right">
+                <%= link_to "Edit", edit_ride_interval_path(@ride, interval), class:"btn btn-default" %>
+                <a data-original-title="Edit This Interval" data-toggle="tooltip" type="button" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-time"></i></a
+            </span>
+          </div>
+         <% end %>
+        </div>
+      </div>
+    <% end %>
+</div>

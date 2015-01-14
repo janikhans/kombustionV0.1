@@ -65,22 +65,12 @@
     </ul>
     <div id="myTabContent" class="tab-content">
       <div class="tab-pane active in" id="home">
+        </br>
           <% if @ride.intervals.count > 0 %>
-    <% @ride.intervals.each do |interval| %>
-      <tr>
-        <td><%= interval.description %></td>
-        <td><%= interval.length %> </td>
-        <td><%= interval.action %> </td>
-        <td><%= interval.recommended %> </td>
-        <td><%= interval.group %> </td>
-        <td><%= link_to "Edit", edit_ride_interval_path(@ride, interval), class:"btn btn-default" %></td>
-      </tr>
-    <% end %>
-  <% else %>
-    <tr>
-      <td colspan="2">No intervals found for this vehicle.  Click the 'New Interval' button to create a new interaction.</td>
-    </tr>
-  <% end %>
+            <%= render 'intervals' %>
+          <% else %>
+            No intervals found for this vehicle.  Click the 'New Interval' button to create a new interval.
+          <% end %>
       </div>
       <div class="tab-pane fade" id="issues">
           <%= link_to "New Interval", new_ride_interval_path(@ride), class: "btn btn-primary" %>
